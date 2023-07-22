@@ -77,10 +77,14 @@ button {
   text-align: left;
   outline: none;
   background: transparent;
-  border: 1px solid #c0bfd2;
-  border-radius: 0.3em;
+  border: 2px solid #c0bfd2;
+
   border-radius: 3em;
 }
+.option-div:hover {
+  transform: scale(110%);
+}
+
 .option-div:disabled {
   color: #000000;
   cursor: not-allowed;
