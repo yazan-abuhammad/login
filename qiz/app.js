@@ -57,6 +57,67 @@ const quizArray = [
     ],
     correct: "All of the above",
   },
+  {
+    id: "4",
+    question: "What type of language is JavaScript?",
+    options: [
+      "Compiled language",
+      "Interpreted language",
+      "Assembly language",
+      "Machine language",
+    ],
+    correct: "Interpreted language",
+  },
+  {
+    id: "5",
+    question: "Which of the following is NOT a JavaScript data type?",
+    options: [" String", " Float", "Boolean", "Array"],
+    correct: "Float",
+  },
+  {
+    id: "6",
+    question:
+      "Which function is used to print content to the browser's developer console?",
+    options: ["console.log()", "print()", "log())", "debug()"],
+    correct: "console.log()",
+  },
+
+  {
+    id: "7",
+    question: "The '===' operator in JavaScript checks for:",
+    options: [
+      "Value equality only",
+      "Type equality only",
+      "Value and type equality",
+      "None of the above",
+    ],
+    correct: "Value and type equality",
+  },
+
+  {
+    id: "8",
+    question: "What is the purpose of the 'this' keyword in JavaScript?",
+    options: [
+      "It refers to the current HTML element.",
+      "It refers to the previous function in the call stack.",
+      "It refers to the current object in the context.",
+      "It refers to the global window object.",
+    ],
+    correct: "It refers to the current object in the context.",
+  },
+
+  {
+    id: "9",
+    question:
+      " Which built-in method is used to convert a string to all lowercase letters?",
+    options: [
+      "toLowerCase()",
+      "lowerCase()",
+      "changeCase('lower')",
+      "allLowerCase()",
+    ],
+    correct: "toLowerCase",
+  },
 ];
 
 //Restart Quiz
