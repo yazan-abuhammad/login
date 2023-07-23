@@ -36,6 +36,7 @@ function validation() {
   let confirmoEmail = document.querySelector("#confirm-your-email").value;
   let password = document.querySelector("#Password").value;
   let confirmPassword = document.querySelector("#Confirm-Password").value;
+  let quiztype = document.getElementById("quiztype").value;
 
   let userData = {
     FirstName: firstName,
@@ -46,6 +47,7 @@ function validation() {
     ConfirmoEmail: confirmoEmail,
     Password: password,
     ConfirmPassword: confirmPassword,
+    quiztype: quiztype,
   };
 
   let pwd_expression =
@@ -86,3 +88,19 @@ function LocalStore(UserName, Email, Password) {
 
 ///////////////////////////////exam selector///////////////////////////
 //////////////////////////////////////////////////////////////////////
+function selectExam() {
+  let selector = document.getElementById("quiztype");
+
+  let btn = document.getElementById("submit");
+
+  if (selector.value == "Html") {
+    localStorage.setItem(`exam`, `HTML`);
+    btn.style.display = "block";
+  } else if (selector.value == "Css") {
+    localStorage.setItem(`exam`, `CSS`);
+    btn.style.display = "block";
+  } else if (selector.value == "Js") {
+    localStorage.setItem(`exam`, `JS`);
+    btn.style.display = "block";
+  }
+}

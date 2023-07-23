@@ -141,7 +141,7 @@ form .category label .dot {
 .login-link a:hover {
   text-decoration: underline;
 }
-#select-qiz {
+#quiztype {
   width: 43vmin;
   height: 3vmax;
   margin-left: 23vmin;
