@@ -1,13 +1,3 @@
-const registerForm = document.getElementById("registerForm");
-// const firstName = document.querySelector("#first-Name");
-// const secondName = document.querySelector("#second-Name");
-// const username = document.querySelector("#Username");
-// const email = document.querySelector("#Email");
-// const phoneNumber = document.querySelector("#Phone-Number");
-// const confirmoEmail = document.querySelector("#confirm-your-email");
-// const password = document.querySelector("#Password");
-// const confirmPassword = document.querySelector("#Confirm-Password");
-
 // let userData = {
 //   FirstName: firstName,
 //   SecondName: secondName,
@@ -19,7 +9,7 @@ const registerForm = document.getElementById("registerForm");
 //   ConfirmPassword: confirmPassword,
 // };
 
-// localStorage.setItem("userData", JSON.stringify("UsersData"));
+// 0.setItem("userData", JSON.stringify("UsersData"));
 
 let userinfo = [];
 
@@ -36,15 +26,27 @@ function transpert() {
   window.location = "../Login Page/index.html";
 }
 
-registerForm.addEventListener("submit", validation);
-function validation(event) {
-  event.preventDefault();
-  let username = event.target.username.value;
-  let email = event.target.email.value;
-  let confirmoEmail = event.target.confirmoEmail.value;
-  let password = event.target.password.value;
-  let confirmPassword = event.target.confirmPassword.value;
-  let select = document.getElementById("select-qiz").value;
+function validation() {
+  let registerForm = document.getElementById("registerForm").value;
+  let firstName = document.querySelector("#first-Name").value;
+  let secondName = document.querySelector("#second-Name").value;
+  let username = document.querySelector("#Username").value;
+  let email = document.querySelector("#Email").value;
+  let phoneNumber = document.querySelector("#Phone-Number").value;
+  let confirmoEmail = document.querySelector("#confirm-your-email").value;
+  let password = document.querySelector("#Password").value;
+  let confirmPassword = document.querySelector("#Confirm-Password").value;
+
+  let userData = {
+    FirstName: firstName,
+    SecondName: secondName,
+    Username: username,
+    Email: email,
+    PhoneNumber: phoneNumber,
+    ConfirmoEmail: confirmoEmail,
+    Password: password,
+    ConfirmPassword: confirmPassword,
+  };
 
   let pwd_expression =
     /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
@@ -68,9 +70,9 @@ function validation(event) {
     alert("The two passwords doesn't match");
   else if (select == 0) alert("Please Select quiz Type");
   else {
-    LocalStore(username, email, password);
     transpert();
   }
+  localStorage.setItem("userData", JSON.stringify(userData));
 }
 
 function LocalStore(UserName, Email, Password) {
