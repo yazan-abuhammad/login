@@ -19,14 +19,14 @@ function RestoreData() {
     userinfo = StoredData;
   }
 }
+// let sub = document.getElementById("submit")
+// sub.addEventListener("click", function transpert (event) {
+//   event.preventDefault();
+//   console.log('test');
+//   window.location.href = "../Login Page/index.html"
+// }
 
-function transpert() {
-  // document.getElementById('submit').style.display="none";
-  // document.getElementById("subdiv").style.display="block";
-  window.location = "../Login Page/index.html";
-}
-
-function validation() {
+function validation(event) {
   let registerForm = document.getElementById("registerForm").value;
   let firstName = document.querySelector("#first-Name").value;
   let secondName = document.querySelector("#second-Name").value;
@@ -70,9 +70,10 @@ function validation() {
     alert("Password must be 8 charechter minimum and maximum 32");
   else if (confirmPassword != password)
     alert("The two passwords doesn't match");
-  else if (select == 0) alert("Please Select quiz Type");
+  else if (quiztype == 0) alert("Please Select quiz Type");
   else {
-    transpert();
+    event.preventDefault();
+    window.location.href = "../Login Page/index.html";
   }
   localStorage.setItem("userData", JSON.stringify(userData));
 }
@@ -80,27 +81,9 @@ function validation() {
 function LocalStore(UserName, Email, Password) {
   RestoreData();
   userinfo.push(UserName);
+  // userinfo.push(FirstName);
   userinfo.push(Email);
   userinfo.push(Password);
   let userinfoList = JSON.stringify(userinfo);
   localStorage.setItem("UsersData", userinfoList);
-}
-
-///////////////////////////////exam selector///////////////////////////
-//////////////////////////////////////////////////////////////////////
-function selectExam() {
-  let selector = document.getElementById("quiztype");
-
-  let btn = document.getElementById("submit");
-
-  if (selector.value == "Html") {
-    localStorage.setItem(`exam`, `HTML`);
-    btn.style.display = "block";
-  } else if (selector.value == "Css") {
-    localStorage.setItem(`exam`, `CSS`);
-    btn.style.display = "block";
-  } else if (selector.value == "Js") {
-    localStorage.setItem(`exam`, `JS`);
-    btn.style.display = "block";
-  }
 }

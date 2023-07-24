@@ -14,11 +14,11 @@ let scoreCount = 0;
 let count = 11;
 let countdown;
 let quizArray = [];
-let Quiztype = storedData.quiztype;
-console.log(Quiztype);
+let Data = JSON.parse(localStorage.getItem("userData"));
+console.log(Data.quiztype);
 //Questions and Options array
 
-if (Quiztype === "Js") {
+if (Data.quiztype == "Js") {
   quizArray = [
     {
       id: "0",
@@ -122,7 +122,7 @@ if (Quiztype === "Js") {
       correct: "toLowerCase",
     },
   ];
-} else if (Quiztype === "css") {
+} else if (Data.quiztype == "Css") {
   quizArray = [
     {
       id: "0",
@@ -206,7 +206,7 @@ if (Quiztype === "Js") {
       correct: "-webkit",
     },
   ];
-} else if (Quiztype === "Html") {
+} else if (Data.quiztype == "Html") {
   quizArray = [
     {
       id: "0",
@@ -445,6 +445,7 @@ function checker(userOption) {
 
 //initial setup
 function initial() {
+  console.log(userOption);
   quizContainer.innerHTML = "";
   questionCount = 0;
   scoreCount = 0;

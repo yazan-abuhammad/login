@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.nanv {
+  background-color: #1d3670;
+}
+#home {
+  background-color: #56d8e498;
+}
+#home:hover a {
+  color: white !important;
+  background-color: #565d9b;
+}
+a {
+  color: black !important;
+}
+button {
+  background-color: black !important;
+}
+.logo {
+  margin: auto 0;
+  display: flex;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  background-color: #d2d6fd;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #565d9b;
+  font-size: 2vh;
+  transition: 1s;
+}
+.logo::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-color: #6363db #6363db #02062c #02062c;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 50%;
+  transition-duration: 2s;
+}
+.logo:hover::after {
+  transform: rotate(1turn);
+  border-color: #3795bd #3795bd #261e3b #261e3b;
+}
+.logo:hover {
+  color: #3795bd;
+  background-color: #0c134f;
+}
+.navo li {
+  margin-right: 10px;
+}
+.sign-in,
+.sign-up {
+  background-color: #56d8e498;
+  border-radius: 2px;
+}
+.sign-in:hover {
+  background-color: #565d9b;
+}
+.sign-up:hover {
+  background-color: #565d9b;
+  color: white !important;
+}
+.sign-in:hover a {
+  color: antiquewhite !important;
+}
+.sign-up:hover a {
+  color: white !important;
+}
+.boxing {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(115deg, #56d8e4 10%, #1d3670 90%);
+  filter: blur(10px);
+}
+.greet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid black; */
+  border-radius: 3px;
+  width: 40%;
+  text-align: center;
+  color: aliceblue;
+  font-size: 3vh;
+  transition: 1s;
+  padding: 2%;
+  z-index: 1;
+  background-color: #367a97;
+  
+}
+.greet::backdrop {
+  backdrop-filter: blur(1rem);
+}
+.greet:hover {
+  background-color: #3795bd22;
+}
+
+button {
+  display: inline-block;
+  padding: 1%;
+  background-color: #1d3670 !important;
+  margin-bottom: 1%;
+  transition: 1s;
+}
+button a {
+  color: white !important;
+  text-decoration: none;
+}
+button:hover {
+  background-color: #3795bd !important;
+}
+.greet::after {
+  content: "💻";
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: #3795bd;
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transition: 2s;
+  z-index: -1;
+  line-height: 40px;
+}
+.greet::before {
+  content: "WELCOME";
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: #3795bd;
+  position: absolute;
+  top: -40%;
+  left: -15%;
+  transition: 2s;
+  z-index: -1;
+  line-height: 40px;
+}
+.greet:hover::after {
+  left: 60%;
+  top: -60%;
+  width: 500px;
+  height: 500px;
+  background-color: #1d3670;
+  transform: rotate(1turn);
+  color: #3795bd;
+  font-size: 40px;
+  line-height: 100px;
+}
+.greet:hover::before {
+  left: -40%;
+  top: -60%;
+  width: 500px;
+  height: 500px;
+  background-color: #1d3670;
+  transform: rotate(1turn);
+  color: #3795bd;
+  font-size: 40px;
+  line-height: 100px;
+}
+
+.circle2 {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: #3795bd;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transition: 2s;
+}
+
+.circle1:hover {
+  left: 60%;
+  top: 20%;
+  height: 500px;
+  width: 500px;
+  background-color: #1d3670;
+}
+.circle2:hover {
+  left: 10%;
+  top: 20%;
+  height: 500px;
+  width: 500px;
+  background-color: #1d3670;
+}
+.greet div {
+  /* border: 1px solid black; */
+  border-radius: 3px;
+  backdrop-filter: blur(200px);
+  background-color: #0000002b;
+  padding: 1rem 0;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .navo li {
+    text-align: center;
+    background-color: transparent !important;
+  }
+  .navo li:hover {
+    background-color: #3795bd !important;
+  }
+  .navo li:hover a {
+    color: white !important;
+  }
+  * {
+    font-size: 2.3vh;
+  }
+}
+@media (max-width: 1090px) {
+  .greet::after {
+    display: none;
+  }
+  .greet::before {
+    display: none;
+  }
+}
