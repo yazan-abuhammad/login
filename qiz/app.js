@@ -1,4 +1,5 @@
 //References
+let progress = document.querySelector(".progress");
 let timeLeft = document.querySelector(".time-left");
 let quizContainer = document.getElementById("container");
 let nextBtn = document.getElementById("next-button");
@@ -333,6 +334,7 @@ restart.addEventListener("click", () => {
   initial();
   displayContainer.classList.remove("hide");
   scoreContainer.classList.add("hide");
+  progress.classList.remove("hide");
 });
 
 //Next Button
@@ -347,8 +349,13 @@ nextBtn.addEventListener(
       displayContainer.classList.add("hide");
       scoreContainer.classList.remove("hide");
       //user score
+
       userScore.innerHTML =
-        "Your score is " + scoreCount + " out of " + questionCount;
+        "Your score is " +
+        scoreCount * 10 +
+        "% out of " +
+        questionCount * 10 +
+        "%";
     } else {
       //display questionCount
       countOfQuestion.innerHTML =
@@ -445,7 +452,6 @@ function checker(userOption) {
 
 //initial setup
 function initial() {
-  console.log(userOption);
   quizContainer.innerHTML = "";
   questionCount = 0;
   scoreCount = 0;
@@ -468,3 +474,35 @@ window.onload = () => {
   startScreen.classList.remove("hide");
   displayContainer.classList.add("hide");
 };
+var counter = 0;
+
+//function
+window.addEventListener(
+  "DOMContentLoaded",
+  (move = () => {
+    //global condition (increment j by 1)
+    if (counter == 0) {
+      J = 1;
+      //select element
+      let elem = document.querySelector(".progress-done");
+      //set prefered width for element
+      let width = 0;
+      //for width
+      let main = setInterval(frame, 50);
+      //function for width
+      function frame() {
+        //our width should be :70 + "%"
+        if (width >= 60) {
+          //clear
+          clearInterval(main);
+        } else {
+          //increment width
+          width++;
+          //assign percentages to our width as a unit
+          elem.style.width = width + "%";
+          elem.innerHTML = width + "%";
+        }
+      }
+    }
+  })
+);
