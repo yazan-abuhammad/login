@@ -1,5 +1,6 @@
 //References
 let progress = document.querySelector(".progress");
+
 let timeLeft = document.querySelector(".time-left");
 let quizContainer = document.getElementById("container");
 let nextBtn = document.getElementById("next-button");
@@ -15,6 +16,7 @@ let scoreCount = 0;
 let count = 11;
 let countdown;
 let quizArray = [];
+let result = document.querySelector("#result-container");
 let Data = JSON.parse(localStorage.getItem("userData"));
 console.log(Data.quiztype);
 //Questions and Options array
@@ -336,7 +338,7 @@ restart.addEventListener("click", () => {
   initial();
   displayContainer.classList.remove("hide");
   scoreContainer.classList.add("hide");
-  progress.classList.remove("hide");
+  result.classList.add("hide");
 });
 
 //Next Button
@@ -350,6 +352,8 @@ nextBtn.addEventListener(
       //hide question container and display score
       displayContainer.classList.add("hide");
       scoreContainer.classList.remove("hide");
+      result.classList.remove("hide");
+
       //user score
 
       userScore.innerHTML =
@@ -358,6 +362,9 @@ nextBtn.addEventListener(
         "% out of " +
         questionCount * 10 +
         "%";
+      scoreCount >= 5
+        ? (userScore.style.color = "green")
+        : (userScore.style.color = "red");
     } else {
       //display questionCount
       countOfQuestion.innerHTML =
@@ -451,29 +458,3 @@ function checker(userOption) {
     element.disabled = true;
   });
 }
-
-//initial setup
-function initial() {
-  quizContainer.innerHTML = "";
-  questionCount = 0;
-  scoreCount = 0;
-  count = 11;
-  clearInterval(countdown);
-  timerDisplay();
-  quizCreator();
-  quizDisplay(questionCount);
-}
-
-//when user click on start button
-startButton.addEventListener("click", () => {
-  startScreen.classList.add("hide");
-  displayContainer.classList.remove("hide");
-  initial();
-});
-
-//hide quiz and display start screen
-window.onload = () => {
-  startScreen.classList.remove("hide");
-  displayContainer.classList.add("hide");
-};
-var counter = 0;

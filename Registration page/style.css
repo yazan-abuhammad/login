@@ -11,19 +11,20 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(115deg, #56d8e4 10%, #1d3670 90%);
 }
 .container {
-  max-width: 700px;
-  width: 100%;
-  background-color: #fff;
-  padding: 25px 30px;
+  /* max-width: 700px; */
+  width: 50%;
+  background: linear-gradient(115deg, #1d5d9b 10%, #1d367083 90%);
+  padding: 3% 3%;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 2px #174666, -3px -3px 2px #174666;
 }
+
 .container .title {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 3vh;
+  font-weight: bold;
   position: relative;
 }
 .container .title::before {
@@ -32,15 +33,16 @@ body {
   left: 0;
   bottom: 0;
   height: 3px;
-  width: 30px;
+  width: 20%;
   border-radius: 5px;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
+
 .content form .user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px 0 12px 0;
+  margin: 4% 0 2% 0;
 }
 form .user-details .input-box {
   margin-bottom: 15px;
@@ -67,33 +69,8 @@ form .input-box span.details {
   border-color: #9b59b6;
 }
 
-form .gender-details .gender-title {
-  font-size: 20px;
-  font-weight: 500;
-}
-form .category {
-  display: flex;
-  width: 80%;
-  margin: 14px 0;
-  justify-content: space-between;
-}
-form .category label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-form .category label .dot {
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  margin-right: 10px;
-  background: #d9d9d9;
-  border: 5px solid transparent;
-  transition: all 0.3s ease;
-}
-
 .button {
-  height: 45px;
+  height: 6vh;
   margin: 35px 0;
 }
 .button input {
@@ -110,27 +87,19 @@ form .category label .dot {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 .button input:hover {
-  /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
-@media (max-width: 584px) {
-  .container {
-    max-width: 100%;
-  }
+::placeholder {
+  font-size: 65%;
+}
+option {
+  text-align: center;
+}
 
-  form .category {
-    width: 100%;
-  }
-  .content form .user-details {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
+.details {
+  color: white;
 }
-@media (max-width: 459px) {
-  .container .content .category {
-    flex-direction: column;
-  }
-}
+
 .login-link {
   text-align: center;
 }
@@ -144,5 +113,73 @@ form .category label .dot {
 #quiztype {
   width: 43vmin;
   height: 3vmax;
-  margin-left: 23vmin;
+  transform: translateX(50%);
+}
+@media (min-width: 200px) and (max-width: 800px) {
+  .user-details {
+    display: flex;
+    flex-flow: column;
+    font-size: 20px;
+    height: 100%;
+    width: 100vw;
+  }
+  input {
+    width: 40vw !important;
+    font-size: 10px !important;
+  }
+  .container {
+    height: 90vh;
+    width: 50%;
+    background: none;
+    padding: 3% 3%;
+    border-radius: 5px;
+    box-shadow: none;
+    overflow-x: hidden;
+  }
+  ::placeholder {
+    font-size: 6px;
+  }
+  #quiztype {
+    margin-top: 10px !important;
+    transform: translateX(0%) !important ;
+    font-size: 10px;
+  }
+  body {
+    background-color: #174666 !important;
+    background: none;
+    text-align: center!;
+    /* overflow-x: none; */
+  }
+}
+@media (min-width: 1023px) and (max-width: 1024px) {
+  body {
+    overflow-y: hidden;
+  }
+}
+@media (min-width: 1279px) and (max-width: 1281px) {
+  select {
+    transform: translateX(30%) !important;
+  }
+}
+@media (min-width: 1023px) and (max-width: 1025px) {
+  select {
+    transform: translateX(38%) !important;
+  }
+}
+@media (width = 912px) {
+  select {
+    transform: translateX(0%) !important;
+  }
+}
+@media (width = 820px) {
+  select {
+    transform: translateX(0%) !important;
+  }
+}
+.email_span {
+  font-size: small;
+  color: red;
+}
+.hide {
+  display: none;
 }

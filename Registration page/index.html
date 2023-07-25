@@ -27,42 +27,49 @@
             </div>
             <div class="input-box" >
               <span class="details">Username</span>
-              <input type="text" id="Username" placeholder="Enter your username" required />
+              <input type="text" id="Username" placeholder="User name should only have alphapatic letters" required />
             </div>
-            <div class="input-box" >
-              <span class="details">Email</span>
-              <input type="text"  id="Email" placeholder="Enter your email" required />
-            </div>
-
+            
             <div class="input-box" >
               <span class="details">Phone Number</span>
               <input type="text" id="Phone-Number" placeholder="Enter your number" required />
             </div>
-
+            
             <div class="input-box" >
+              <span class="details">Email</span>
+              <span id="emailtex" class="hide" style="position: fixed; font-size: 1.3vmin; color: red  ;">Email should be like this example@example.com</span>
+              <input type="text" name="Email" id="Email" placeholder="Email should be like this example@example.com" required />
+              
+            </div>
+            <div class="input-box" >
+              
               <span class="details">confirm your email</span>
+              <span id="confirmemailtex" class="hide" style="position: fixed; font-size: 1.3vmin; color: red  ;">Email Don't match</span>
               <input type="text" id="confirm-your-email" placeholder="Enter your email" required />
             </div>
             <div class="input-box">
+              
               <span class="details">Password</span>
-              <input type="password"  id="Password" placeholder="Enter your password" required />
+              <span id="Passwordtex" class="hide" style="position: fixed; font-size: 1.3vmin; color: red  ;">Password must contain capital and small letters,numbers and a symbol</span>
+              <input type="password"  id="Password" placeholder="must be capital and small letters,numbers and a symbol" required />
             </div>
             <div class="input-box" >
+              
               <span class="details">Confirm Password</span>
+              <span id="ConfirmPasswordtex" class="hide" style="position: fixed; font-size: 1.3vmin; color: red  ;">The two passwords doesn't match</span>
               <input type="password" id="Confirm-Password" placeholder="Confirm your password" required />
             </div>
           </div>
 
 
         
-        
+          <span id="quiztypetex" class="hide" style="position: fixed; font-size: 2vmin; color: red  ;">Please select Quiz:</span>
             <select class="quiztype" name="" id="quiztype">
+              <option value="0">Select your Quiz</option>
 
-               <option value="0">Select your Qiz</option>
-             
-                  <option value="Html">Html Qiz</option>
-           <option value="Css">Css Qiz</option>
-              <option value="Js">Javascript Qiz</option>
+              <option value="Html">Html Quiz</option>
+              <option value="Css">Css Quiz</option>
+               <option value="Js">Javascript Quiz</option>
 
 
 
