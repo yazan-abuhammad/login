@@ -136,50 +136,38 @@ if (Data.quiztype == "Js") {
       ],
       correct: "All of the mentioned",
     },
+
     {
       id: "1",
-      question: "Which of the following tag is used to embed css in html page?",
-      options: ["<css>", "<!DOCTYPE html>", "<script>", "<style>"],
-      correct: "<style>",
-    },
-    {
-      id: "2",
       question:
         "Which of the following CSS selectors are used to specify a group of elements?",
       options: ["tag", "id", "class", "++both class and tag"],
       correct: "class",
     },
     {
-      id: "3",
+      id: "2",
       question:
         "Which of the following has introduced text, list, box, margin, border, color, and background properties?",
       options: ["HTML", "PHP", "CSS", "Ajax"],
       correct: "CSS",
     },
     {
-      id: "4",
+      id: "3",
       question:
         "Which of the following CSS framework is used to create a responsive design?",
       options: ["django", "rails", "larawell", "bootstrap"],
       correct: "bootstrap",
     },
     {
-      id: "5",
+      id: "4",
       question:
         "Which of the following CSS selector is used to specify a rule to bind a particular unique element?",
       options: [" tag", " id", "class", "both class and tag"],
       correct: "id",
     },
-    {
-      id: "6",
-      question:
-        "Which of the following type of HTML tag is used to define an internal style sheet?",
-      options: ["<script>", "<link>", "<class>", "<style>"],
-      correct: "<style>",
-    },
 
     {
-      id: "7",
+      id: "5",
       question:
         "Which of the following CSS property is used to make the text bold?",
       options: [
@@ -192,13 +180,27 @@ if (Data.quiztype == "Js") {
     },
 
     {
-      id: "8",
+      id: "6",
       question:
         "Which of the following CSS style property is used to specify an italic text?",
       options: ["style", "font", "font-style", "@font-face"],
       correct: "font-style",
     },
 
+    {
+      id: "7",
+      question:
+        "Which of the following are the CSS Extension Prefixes for Webkit?",
+      options: ["-chrome", "-web", "-o-", "-webkit"],
+      correct: "-webkit",
+    },
+    {
+      id: "8",
+      question:
+        "Which of the following are the CSS Extension Prefixes for Webkit?",
+      options: ["-chrome", "-web", "-o-", "-webkit"],
+      correct: "-webkit",
+    },
     {
       id: "9",
       question:
@@ -475,34 +477,3 @@ window.onload = () => {
   displayContainer.classList.add("hide");
 };
 var counter = 0;
-
-//function
-window.addEventListener(
-  "DOMContentLoaded",
-  (move = () => {
-    //global condition (increment j by 1)
-    if (counter == 0) {
-      J = 1;
-      //select element
-      let elem = document.querySelector(".progress-done");
-      //set prefered width for element
-      let width = 0;
-      //for width
-      let main = setInterval(frame, 50);
-      //function for width
-      function frame() {
-        //our width should be :70 + "%"
-        if (width >= 60) {
-          //clear
-          clearInterval(main);
-        } else {
-          //increment width
-          width++;
-          //assign percentages to our width as a unit
-          elem.style.width = width + "%";
-          elem.innerHTML = width + "%";
-        }
-      }
-    }
-  })
-);
